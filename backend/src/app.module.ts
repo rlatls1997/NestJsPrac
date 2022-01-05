@@ -6,6 +6,7 @@ import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ormconfig } from './config/ormconfig';
 import { ConfigModule } from '@nestjs/config';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { ConfigModule } from '@nestjs/config';
     }),
     TypeOrmModule.forRoot(ormconfig()),
     CatsModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
